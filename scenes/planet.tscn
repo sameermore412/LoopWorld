@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch875p68ojmwo"]
+
+[ext_resource type="Script" uid="uid://bwp87bsvfo0mg" path="res://scripts/planet_node.gd" id="1_ggt7d"]
+[ext_resource type="Texture2D" uid="uid://ptfu7sfbe8jk" path="res://assets/planet03.png" id="2_0k1rn"]
+[ext_resource type="PackedScene" uid="uid://m6fs0p0lscvg" path="res://scenes/debug_target.tscn" id="3_48b8c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ggt7d"]
+
+[node name="PlanetNode" type="Area2D"]
+script = ExtResource("1_ggt7d")
+player_speed = 25
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_0k1rn")
+
+[node name="DebugTarget" parent="." instance=ExtResource("3_48b8c")]
+unique_name_in_owner = true
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ggt7d")

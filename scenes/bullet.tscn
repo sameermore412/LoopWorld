@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://6kgt2jnjwcww"]
+
+[ext_resource type="Script" uid="uid://dsbgstdkfiy12" path="res://scripts/bullet.gd" id="1_y25gk"]
+[ext_resource type="Shader" uid="uid://b6mbyyd334r1e" path="res://shaders/aura.gdshader" id="2_eoqba"]
+[ext_resource type="Texture2D" uid="uid://bhtvsip6d8mnt" path="res://assets/laserBlue08.png" id="2_l5glv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qncy5"]
+shader = ExtResource("2_eoqba")
+shader_parameter/aura_width = 1.0
+shader_parameter/aura_color = Color(0.647059, 0, 0, 0.294118)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y25gk"]
+radius = 16.0
+
+[node name="Bullet" type="Area2D" unique_id=758638966]
+script = ExtResource("1_y25gk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1717923011]
+material = SubResource("ShaderMaterial_qncy5")
+position = Vector2(0, 0.5)
+scale = Vector2(0.994425, 0.981739)
+texture = ExtResource("2_l5glv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2126582864]
+shape = SubResource("CircleShape2D_y25gk")
