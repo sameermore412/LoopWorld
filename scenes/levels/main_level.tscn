@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://du81inhuuntk6"]
+[gd_scene format=3 uid="uid://du81inhuuntk6"]
 
 [ext_resource type="Script" uid="uid://6sr7rvdjjw0l" path="res://scripts/level_manager.gd" id="1_hn3as"]
 [ext_resource type="Script" uid="uid://cnw48xqcokarw" path="res://scenes/levels/enemy_spawner.gd" id="2_h35hl"]
@@ -18,58 +18,59 @@ content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
 
-[node name="MainLevel" type="Node2D" node_paths=PackedStringArray("central_planet")]
+[node name="MainLevel" type="Node2D" unique_id=447490083 node_paths=PackedStringArray("central_planet")]
 script = ExtResource("1_hn3as")
 central_planet = NodePath("PlanetNode")
 
-[node name="EnemySpawner" type="Node2D" parent="."]
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=824627587]
 script = ExtResource("2_h35hl")
 
-[node name="Polygon2D" type="Polygon2D" parent="EnemySpawner"]
+[node name="Polygon2D" type="Polygon2D" parent="EnemySpawner" unique_id=590444981]
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-132.292, -74.7036, -132.292, -74.7036, 44.9321, -93.3587, 222.156, -102.686, 455.346, -102.686, 613.915, -93.3587, 819.122, 18.5723, 987.018, -18.7381, 1210.88, -102.686, 1341.47, -102.686, 1583.98, -18.7381, 1705.24, -102.686, 1901.12, -112.014, 2124.98, -102.686, 2180.95, 27.8999, 2199.6, 298.4, 2171.62, 512.934, 2190.28, 830.072, 2218.26, 1081.92, 2180.95, 1221.83, 1817.17, 1109.9, 1397.43, 1109.9, 1145.59, 1063.26, 847.104, 1007.3, 604.587, 1119.23, 306.104, 1081.92, 128.88, 1072.59, -57.6714, 1081.92, -104.309, 960.658, -94.9818, 830.072, -374.809, 904.693, -365.482, 811.417, -328.171, 643.52, -309.516, 503.607, -328.171, 298.4, -365.482, 130.503, -309.516, 37.2275)
 
-[node name="Timer" type="Timer" parent="EnemySpawner"]
+[node name="Timer" type="Timer" parent="EnemySpawner" unique_id=942857059]
 wait_time = 3.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1912.0
-offset_bottom = 1072.0
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1757494856]
+offset_right = 1929.0
+offset_bottom = 1080.0
 texture = ExtResource("2_tkkka")
+expand_mode = 2
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="PlanetNode" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("4_tkkka")]
+[node name="PlanetNode" parent="." unique_id=833700698 node_paths=PackedStringArray("player_node") instance=ExtResource("4_tkkka")]
 position = Vector2(-408, 512)
 player_node = NodePath("../PlayerNode")
 player_speed = 50
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=95685201]
 position = Vector2(728, 504)
 
-[node name="PlayerNode" parent="." instance=ExtResource("5_geiq8")]
+[node name="PlayerNode" parent="." unique_id=1281926766 instance=ExtResource("5_geiq8")]
 z_index = 2
 position = Vector2(728, 504)
 
-[node name="Enemy" parent="." instance=ExtResource("8_kwk8y")]
+[node name="Enemy" parent="." unique_id=1149695650 instance=ExtResource("8_kwk8y")]
 position = Vector2(288, 784)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2109031592]
 
-[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer"]
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer" unique_id=1991375765]
 offset_right = 256.0
 offset_bottom = 69.0
 size_flags_horizontal = 0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 
-[node name="WordListDisplay" type="Label" parent="CanvasLayer/MarginContainer2"]
+[node name="WordListDisplay" type="Label" parent="CanvasLayer/MarginContainer2" unique_id=1037240169]
 layout_mode = 2
 size_flags_horizontal = 3
 label_settings = ExtResource("10_c7w6w")
 script = ExtResource("7_kwk8y")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1485366268]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -77,7 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_bottom = 20
 
-[node name="LetterGrid" type="GridContainer" parent="CanvasLayer/MarginContainer"]
+[node name="LetterGrid" type="GridContainer" parent="CanvasLayer/MarginContainer" unique_id=1235089806]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 8
@@ -85,7 +86,7 @@ theme = ExtResource("8_c7w6w")
 columns = 7
 script = ExtResource("7_h35hl")
 
-[node name="Letter1" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid"]
+[node name="Letter1" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid" unique_id=2028600904]
 layout_mode = 2
 theme = ExtResource("8_c7w6w")
 text = "A"
@@ -94,7 +95,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Letter2" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid"]
+[node name="Letter2" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid" unique_id=1329208560]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kwk8y")
 text = "B"
@@ -103,7 +104,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Letter3" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid"]
+[node name="Letter3" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid" unique_id=194712667]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kwk8y")
 text = "C"
@@ -112,7 +113,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Letter4" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid"]
+[node name="Letter4" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid" unique_id=1593776701]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kwk8y")
 text = "D"
@@ -121,7 +122,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Letter5" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid"]
+[node name="Letter5" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid" unique_id=440385509]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kwk8y")
 text = "E"
@@ -130,7 +131,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Lettter6" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid"]
+[node name="Lettter6" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid" unique_id=1642061703]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kwk8y")
 text = "F"
@@ -139,7 +140,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Letter7" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid"]
+[node name="Letter7" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid" unique_id=1767621328]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kwk8y")
 text = "G"
@@ -148,7 +149,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Letter8" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid"]
+[node name="Letter8" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid" unique_id=1370222152]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kwk8y")
 text = "H"
@@ -157,7 +158,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Letter9" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid"]
+[node name="Letter9" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid" unique_id=47972535]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kwk8y")
 text = "I"
@@ -166,7 +167,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Letter10" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid"]
+[node name="Letter10" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid" unique_id=1587699606]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kwk8y")
 text = "J"
@@ -175,7 +176,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Letter11" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid"]
+[node name="Letter11" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid" unique_id=368642529]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kwk8y")
 text = "J"
@@ -184,7 +185,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Letter12" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid"]
+[node name="Letter12" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid" unique_id=707009022]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kwk8y")
 text = "J"
@@ -193,7 +194,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Letter13" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid"]
+[node name="Letter13" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid" unique_id=1036087915]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kwk8y")
 text = "J"
@@ -202,7 +203,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Letter14" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid"]
+[node name="Letter14" type="Label" parent="CanvasLayer/MarginContainer/LetterGrid" unique_id=2124328437]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kwk8y")
 text = "J"
@@ -211,7 +212,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer"]
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer" unique_id=1500066786]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -221,9 +222,20 @@ offset_bottom = 40.0
 grow_horizontal = 2
 theme_override_constants/margin_top = 10
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/MarginContainer3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer3" unique_id=1702798502]
 layout_mode = 2
+
+[node name="EnemyOnPlanetLabel" type="Label" parent="CanvasLayer/MarginContainer3/VBoxContainer" unique_id=222700949]
+layout_mode = 2
+text = "0"
 label_settings = ExtResource("10_c7w6w")
-horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("11_erkku")
+
+[node name="EnemyDestroyedLabel" type="Label" parent="CanvasLayer/MarginContainer3/VBoxContainer" unique_id=721322610]
+layout_mode = 2
+text = "Hi"
+label_settings = ExtResource("10_c7w6w")
+script = ExtResource("11_erkku")
+current_label_type = 1
+metadata/_custom_type_script = "uid://di761mkx1n2ch"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://6p6rdvrgfitp"]
+[gd_scene format=3 uid="uid://6p6rdvrgfitp"]
 
 [ext_resource type="Script" uid="uid://b0gr1b671etoq" path="res://scenes/enemy.gd" id="1_md0e3"]
 [ext_resource type="Texture2D" uid="uid://bivp5gtg1bifl" path="res://assets/enemyBlack1.png" id="2_md0e3"]
@@ -14,30 +14,30 @@ shader_parameter/aura_color = Color(0.87451, 0, 0, 0.890196)
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ra3w"]
 radius = 40.7922
 
-[node name="Enemy" type="Area2D"]
+[node name="Enemy" type="Area2D" unique_id=590423036]
 script = ExtResource("1_md0e3")
 
-[node name="Sprites" type="Node2D" parent="."]
+[node name="Sprites" type="Node2D" parent="." unique_id=2129488808]
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprites"]
+[node name="Sprite2D" type="Sprite2D" parent="Sprites" unique_id=1378583278]
 rotation = -1.5708
 texture = ExtResource("2_md0e3")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Sprites"]
+[node name="Sprite2D2" type="Sprite2D" parent="Sprites" unique_id=343467459]
 material = SubResource("ShaderMaterial_c4w8v")
 position = Vector2(-32, 0)
 rotation = 1.5708
 scale = Vector2(1.21205, 1.23257)
 texture = ExtResource("3_4ra3w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2140919755]
 shape = SubResource("CircleShape2D_4ra3w")
 
-[node name="CPUParticles2D" parent="." instance=ExtResource("5_c4w8v")]
+[node name="CPUParticles2D" parent="." unique_id=396560923 instance=ExtResource("5_c4w8v")]
 randomness = 1.0
 emission_shape = 1
 emission_sphere_radius = 0.01
 scale_amount_curve = null
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=78997174]
 one_shot = true

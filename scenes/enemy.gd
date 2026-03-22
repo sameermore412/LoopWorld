@@ -24,6 +24,7 @@ func _physics_process(delta: float) -> void:
 	
 func _on_area_entered(area: Area2D):
 	if area is Bullet:
+		GameManager1.increment_enemy_destroyed()
 		particles.emitting = true
 		sprite.visible = false
 		death_timer.start(1)
